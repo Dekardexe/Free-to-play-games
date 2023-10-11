@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="style1.css">
+   <!--CSS flexboxgrid-->
+   <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"-->
+   <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.css">
+
+</head>
+
+
+<body>
+   <div class="my-body">
+      <div class="main-part">
+         <!-- <div class="loader">
+            <div class="loader_inner"></div>
+         </div> -->
+
+         <div class="single-game-list">
+            <h1 class="game-name">Название</h1>
+            <div class="first-mass">
+               <img class="thumbnail">
+               <p class="descript">Описание</p>
+               <div class="clear"></div>
+            </div>
+            <div class="second-mass">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="dual-field">
+                           <h1>Дата релиза</h1>
+                           <p class="relis-date">дата релиза</p>
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="dual-field">
+                           <h1>Жанр</h1>
+                           <p class="genre">Жанр</p>
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="dual-field">
+                           <h1>Издатель</h1>
+                           <p class="publisher">Издатель</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <h1 class="minimum-system-requirements-head"> Минимальные системные требования</h1>
+            <div class="minimum-system-requirements">
+               <div class="container">
+                  <div class="row">
+
+                     <div class="col-xs-6 col-sm-6 col-lg-3">
+                        <div class="dual-field">
+                           <h1>Требуемый процессор: </h1>
+                           <p></p>
+                           <p class="msr-proc"> </p>
+                        </div>
+                     </div>
+                     <div class="col-xs-6 col-sm-6 col-lg-3">
+                        <div class="dual-field">
+                           <h1>Требования к видеокарте: </h1>
+                           <p></p>
+                           <p class="msr-graph"> </p>
+                        </div>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-lg-2">
+                        <div class="dual-field">
+                           <h1>Требуемая ОС:</h1>
+                           <p></p>
+                           <p class="msr-os"> </p>
+                        </div>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-lg-2">
+                        <div class="dual-field">
+                           <h1>Требуемый объем памяти: </h1>
+                           <p></p>
+                           <p class="msr-mem"> </p>
+                        </div>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-lg-2">
+                        <div class="dual-field">
+                           <h1>Требуемое место на диске: </h1>
+                           <p></p>
+                           <p class="msr-storage"> </p>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-container">
+               <h1 class="screens-header"></h1>
+               <ul class="carousel-list">
+                  <div class="container">
+                     <div class="row">
+
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
+                           <li><a class="img-ref1" href="">
+                                 <img class="carousel-item1" src="" alt="Изображение 1">
+                              </a></li>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
+                           <li><a class="img-ref2" href="">
+                                 <img class="carousel-item2" src="" alt="Изображение 2">
+                              </a></li>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
+                           <li><a class="img-ref3" href="">
+                                 <img class="carousel-item3" src="" alt="Изображение 3">
+                              </a></li>
+                        </div>
+
+                     </div>
+                  </div>
+               </ul>
+            </div>
+
+
+
+            <button class="return-to-main-page" onclick=" homePage() ">
+               <!-- <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M10 80 Q 52.5 10, 95 80 T 180 80" stroke="black" fill="transparent"/>
+                  Код описания значка </svg> -->
+               Домой </button>
+         </div>
+      </div>
+   </div>
+   <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+   <script>
+      //LOADER
+      // window.onload = (event) => {
+      //    console.log("page is fully loaded");
+      // };
+      let url = '';
+      async function getGameApi() {
+         document.body.onload = function () {
+            $(".loader_inner").fadeOut();
+            $(".loader").delay(400).fadeOut("slow");
+         };
+
+
+         if (localStorage[0]) {
+            url = localStorage[0];
+         }
+         else {
+            alert(`Ошибка при загрузке игры`);
+         }
+         let response = await fetch(url);
+         let game = await response.json(); // читаем ответ в формате JSON
+         let release_rus_date = game.release_date.slice(8, 10) + game.release_date.slice(4, 8) + game.release_date.slice(0, 4);
+         ///////////////////////////////////////////////////////////////////
+
+
+         document.querySelector('.game-name').textContent = game.title;
+         document.querySelector('.relis-date').textContent = release_rus_date;
+         document.querySelector('.publisher').textContent = game.publisher;
+         document.querySelector('.genre').textContent = game.genre;
+         document.querySelector('.thumbnail').src = game.thumbnail;
+         document.querySelector(`.descript`).textContent = game.description;
+
+         let element = [];
+         {
+            let minSysReq = game.minimum_system_requirements;
+            for (x in minSysReq) {
+               element.push(minSysReq[x]);
+            }
+         }
+         if (element.length == 0) {
+            alert(`Не удалось получить по API минимальные системные требования игры`)
+            document.querySelector(`.minimum-system-requirements`).style.display = 'none';
+            document.querySelector(`.minimum-system-requirements-head`).style.display = 'none';
+         }
+         document.querySelector('.msr-os').textContent = element[0];
+         document.querySelector('.msr-proc').textContent = element[1];
+         document.querySelector('.msr-mem').textContent = element[2];
+         document.querySelector('.msr-graph').textContent = element[3];
+         document.querySelector('.msr-storage').textContent = element[4];
+         // console.log(`Массив системных требований: `, element);
+         element = [];
+         {
+            let screens = game.screenshots
+            for (x in screens) {
+               //console.log(screens[x].image);
+               element.push(screens[x].image);
+            }
+         }
+
+
+
+         document.querySelector(`.screens-header`).textContent = "Скриншоты из " + game.title;
+         document.querySelector(`.carousel-item1`).src = element[0];
+         document.querySelector(`.img-ref1`).href = element[0];
+         document.querySelector(`.carousel-item2`).src = element[1];
+         document.querySelector(`.img-ref2`).href = element[1];
+         document.querySelector(`.carousel-item3`).src = element[2];
+         document.querySelector(`.img-ref3`).href = element[2];
+         // $(".loader_inner").fadeOut();
+         // $(".loader").delay(400).fadeOut("slow");
+      }
+
+
+
+
+
+      function homePage() {
+         //localStorage.clear();
+         localStorage[`return`] = true;
+
+         window.location.href = 'mainPage.html';
+      }
+
+      getGameApi();
+   </script>
+</body>
+
+
+
+</html>

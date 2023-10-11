@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="style1.css">
+   <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"-->
+   <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.css">
+</head>
+
+<body>
+   <h1>Free to play games</h1>
+   <div class="main-part">
+      <div class="filtres">
+         <div class="platform-selector">
+            <select class="select-platform" value="all" onchange="urlGenerator(true)">
+               <option value="all">Все платформы</option>
+               <option value="pc">ПК</option>
+               <option value="browser">Браузер</option>
+            </select>
+         </div>
+         <div class="genre-selector">
+            <select class="select-genre" value="all" onchange="urlGenerator(true)">
+               <option value="all">Все жанры</option>
+               <option value="shooter">Шутер</option>
+               <option value="mmo">ММО</option>
+               <option value="moba">Моба</option>
+               <option value="strategy">Стратегия</option>
+            </select>
+         </div>
+
+         <div class="sort-selector">
+            <select class="sort-selected" value="relevance" onchange="urlGenerator(true)">
+               <option value="relevance">Релевантность</option>
+               <option value="popularity">Популярность</option>
+               <option value="release-date">Дата выхода</option>
+               <option value="alphabetical">Алфавит</option>
+            </select>
+         </div>
+      </div>
+
+
+
+      <div class="game-list">
+
+         <div class="container">
+            <div class="row">
+               <div class="col-xs-12 col-md-6 col-lg-4">
+                  <div class="every-game">
+
+                     <div class="game-1" onclick="relocate(1)">
+                        <p class="invis">asdasd</p>
+                        <img class="thumbnail">
+                        <div class="every-game-text">
+                           <h1 class="game-name">Название</h1>
+                           <div class="dual-field">
+                              <h1>Дата релиза</h1>
+                              <p class="relis-date">дата релиза</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Издатель</h1>
+                              <p class="publisher">Издатель</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Жанр</h1>
+                              <p class="genre">Жанр</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-xs-12 col-md-6 col-lg-4">
+                  <div class="every-game">
+                     <div class="game-2" onclick="relocate(2)">
+                        <p class="invis">asdasd</p>
+                        <img class="thumbnail">
+                        <div class="every-game-text">
+                           <h1 class="game-name">Название</h1>
+                           <div class="dual-field">
+                              <h1>Дата релиза</h1>
+                              <p class="relis-date">дата релиза</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Издатель</h1>
+                              <p class="publisher">Издатель</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Жанр</h1>
+                              <p class="genre">Жанр</p>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+
+               <div class="col-xs-12 col-md-6 col-lg-4">
+                  <div class="every-game">
+                     <div class="game-3" onclick="relocate(3)">
+                        <p class="invis">asdasd</p>
+                        <img class="thumbnail">
+                        <div class="every-game-text">
+                           <h1 class="game-name">Название</h1>
+                           <div class="dual-field">
+                              <h1>Дата релиза</h1>
+                              <p class="relis-date">дата релиза</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Издатель</h1>
+                              <p class="publisher">Издатель</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Жанр</h1>
+                              <p class="genre">Жанр</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-xs-12 col-md-6 col-lg-4">
+                  <div class="every-game">
+                     <div class="game-4" onclick="relocate(4)">
+                        <p class="invis">asdasd</p>
+                        <img class="thumbnail">
+                        <div class="every-game-text">
+                           <h1 class="game-name">Название</h1>
+                           <div class="dual-field">
+                              <h1>Дата релиза</h1>
+                              <p class="relis-date">дата релиза</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Издатель</h1>
+                              <p class="publisher">Издатель</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Жанр</h1>
+                              <p class="genre">Жанр</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-xs-12 col-md-6 col-lg-4">
+                  <div class="every-game">
+                     <div class="game-5" onclick="relocate(5)">
+                        <p class="invis">asdasd</p>
+                        <img class="thumbnail">
+                        <div class="every-game-text">
+                           <h1 class="game-name">Название</h1>
+                           <div class="dual-field">
+                              <h1>Дата релиза</h1>
+                              <p class="relis-date">дата релиза</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Издатель</h1>
+                              <p class="publisher">Издатель</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Жанр</h1>
+                              <p class="genre">Жанр</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-xs-12 col-md-6 col-lg-4">
+                  <div class="every-game">
+                     <div class="game-6" onclick="relocate(6)">
+                        <p class="invis">asdasd</p>
+                        <img class="thumbnail">
+                        <div class="every-game-text">
+                           <h1 class="game-name">Название</h1>
+                           <div class="dual-field">
+                              <h1>Дата релиза</h1>
+                              <p class="relis-date">дата релиза</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Издатель</h1>
+                              <p class="publisher">Издатель</p>
+                           </div>
+                           <div class="dual-field">
+                              <h1>Жанр</h1>
+                              <p class="genre">Жанр</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="buttom-of-the-page">
+         <div class="butt">
+            <button class="prev-page" onclick="prevPage()">Пред. страница</button>
+         </div>
+         <div class="butt">
+            <button class="next-page" onclick="nextPage()">След. страница</button>
+         </div>
+      </div>
+   </div>
+   <div>
+      <p class="page-number"> 1/1</p>
+   </div>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+   <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script-->
+   <script src="mainPage.js"></script>
+</body>
+
+</html>
