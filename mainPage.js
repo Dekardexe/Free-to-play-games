@@ -12,18 +12,26 @@ window.onbeforeunload = function () {
 
 
 async function getGameApi(url, gameNumber) {
-  let response = await fetch(url);
-  let game;
+
+  // const rapidUrl = 'https://free-to-play-games-database.p.rapidapi.com/api/filter?tag=3d.mmorpg.fantasy.pvp&platform=pc';
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '7da3ded902mshdeabc997246b249p1758f9jsn618b5d73fa13',
+      'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+    }
+  };
+let game;
   try {
-    game = await response.json(); // читаем ответ в формате JSON
+    const response = await fetch(url, options);
+    game = await response.json();
+    console.log(game);
+  } catch (error) {
+    console.error(error);
   }
-  catch (error) {
-    console.log(`Ошибка при выполнении запроса: ` + error.message);
-  }
+
   let a = '.game-' + gameNumber + ' ';
-  //let a ="game-1 ";
   let release_rus_date = game[gameNumber + pageNumber * 6 - 1].release_date.slice(8, 10) + game[gameNumber + pageNumber * 6 - 1].release_date.slice(4, 8) + game[gameNumber + pageNumber * 6 - 1].release_date.slice(0, 4);
-  //console.log(game[gameNumber - 1].title);
   document.querySelector(`${a} .game-name`).textContent = game[gameNumber + pageNumber * 6 - 1].title;
   document.querySelector(`${a} .relis-date`).textContent = release_rus_date;
   document.querySelector(`${a} .publisher`).textContent = game[gameNumber + pageNumber * 6 - 1].publisher;
@@ -37,7 +45,7 @@ async function getGameApi(url, gameNumber) {
 function urlGenerator(isChanged) {
 
   //Создание URL адреса для взаимодействия с api
-  let url = 'https://www.freetogame.com/api/games?platform=';
+  let url = 'https://free-to-play-games-database.p.rapidapi.com/api/games?platform=';
 
   //возвращение значений selectors после возвращения или рефреша страницы
   if (localStorage[`return`] == "true") {
@@ -61,7 +69,7 @@ function urlGenerator(isChanged) {
     genre = "category=" + genre;
     platform = platform + "&";
     url = url + platform + genre + sort;
-  }else {
+  } else {
     url = url + platform + sort;
   }
 
@@ -98,9 +106,11 @@ function urlGenerator(isChanged) {
 let url = urlGenerator(false);
 
 function relocate(gameNumber) {
+  console.log(`зашли в релокейт`)
   let a = '.game-' + gameNumber + ' ';
-  localStorage[0] = 'https://www.freetogame.com/api/game?id=' + document.querySelector(`${a} .invis`).textContent;
-  window.location.href = 'index.html';
+  localStorage['eachGame'] = 'https://free-to-play-games-database.p.rapidapi.com/api/game?id=' + document.querySelector(`${a} .invis`).textContent;
+  console.log(localStorage['eachGame'])
+  window.location.href = 'eachGame.html';
 }
 
 function nextPage() {
