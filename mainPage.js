@@ -106,10 +106,9 @@ function urlGenerator(isChanged) {
 let url = urlGenerator(false);
 
 function relocate(gameNumber) {
-  console.log(`зашли в релокейт`)
   let a = '.game-' + gameNumber + ' ';
   localStorage['eachGame'] = 'https://free-to-play-games-database.p.rapidapi.com/api/game?id=' + document.querySelector(`${a} .invis`).textContent;
-  console.log(localStorage['eachGame'])
+  console.log('localStorage[eachGame] == ', localStorage['eachGame'])
   window.location.href = 'eachGame.html';
 }
 
